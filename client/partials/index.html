@@ -1,0 +1,30 @@
+<h1>Color of the Day!</h1>
+<div class="cods">
+    <div ng-repeat="cod in cods" class="cod" style="background-color:{{ cod.colorCode }}" ng-class="setTextColorClass(cod.colorCode)">
+        <div class="cod-text">
+            <p class="cod-color-name">{{ cod.colorName }}</p>
+            <p class="cod-name">{{ cod.userName}}</p>
+            <p class="cod-date">{{ cod.updatedAt | date: 'fullDate'}}</p>
+        </div>
+    </div>
+</div> <!-- end cods -->
+<button ng-click='toggleModal()'>Add Your Color of the Day</button>
+<modal-dialog show='modalShown' width='350px' height='500px'>
+    <p>Select your color for today:</p>
+    <div class="color-list">
+        <div ng-repeat="row in colors">
+            <span ng-repeat="color in row" style="background-color:{{ color[1] }};" class="color-chip" ng-click="setSelected(color[1])"></span>
+        </div>
+    </div>
+    <div id="selected-color-div">
+        <div style="background-color:{{selected}};" id="selected-color"></div>
+        <div id="selected-color-name"> {{ newCod.colorName}}</div>
+    </div>
+    <form ng-submit="create()" id="color-form">
+        <label for="colorName">Name your color:</label>
+        <input type="text" name="colorName" ng-model="newCod.colorName">
+        <label for="userName">Sign your entry (if you wish):</label>
+        <input type="text" name="userName" ng-model="newCod.userName">
+        <input type="submit">
+    </form>
+</modal-dialog>
