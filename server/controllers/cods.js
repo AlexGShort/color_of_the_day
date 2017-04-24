@@ -36,16 +36,17 @@ module.exports = function codsController(){
     //     })
     //     res.json({placeholder:'updated'});
     // }
-    // this.delete = function(req,res){
-    //     Friend.findByIdAndRemove(req.params.id, function(err, friend){
-    //         if(!err){
-    //             console.log(friend.lastname + "removed");
-    //         } else {
-    //             console.log("Error on delete: ", err);
-    //         }
-    //     })
-    //     res.json({placeholder:'delete'});
-    // }
+    this.delete = function(req,res){
+        Cod.findByIdAndRemove(req.params.id, function(err, cod){
+            if(!err){
+                console.log(cod._id + "removed");
+                res.json({deletion: cod._id + 'deleted'});
+            } else {
+                console.log("Error on delete: ", err);
+                res.json({deletion: 'failed: ' + err});
+            }
+        })
+    }
     // this.show = function(req,res){
     //     //your code here
     //     console.log("friendsController show ran");

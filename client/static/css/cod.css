@@ -1,3 +1,24 @@
+body {
+    background-color: #333;
+    padding: 10px;
+}
+
+.container {
+    padding: 10px;
+}
+
+header h1 {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 5px;
+}
+
+#add-color-button {
+    border-radius: 3px;
+    margin: 5px;
+}
+
 .color-list {
     max-height: 200px;
     overflow: auto;
@@ -11,11 +32,7 @@
 }
 
 .cod {
-    width: 220px;
-    height: 80px;
     margin: 5px;
-    padding: 8px;
-    border: 1px solid #333;
     border-radius: 5px;
 }
 
@@ -25,6 +42,11 @@
 
 .cod-text {
     vertical-align: middle;
+}
+
+.cod .del-button {
+    font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .color-chip {
