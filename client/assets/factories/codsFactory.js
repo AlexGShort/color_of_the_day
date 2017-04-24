@@ -34,11 +34,14 @@ app.factory("codsFactory", ['$http', function($http){
     //         }
     //     });
     // }
-    // factory.delete = function(friend_id){
-    //     console.log("friendsFactory delete ran");
-    //     $http.delete('/friends/' + friend_id).then(function(returned_data){
-    //         console.log(returned_data);
-    //     });
-    // }
+    factory.delete = function(cod_id, callback){
+        console.log("codsFactory delete ran");
+        $http.delete('/cods/' + cod_id).then(function(returned_data){
+            console.log(returned_data);
+            if(typeof(callback) == 'function'){
+                callback(returned_data);
+            };
+        });
+    }
     return factory;
 }]);

@@ -19,8 +19,8 @@ module.exports = function(app){
     // app.put('/friends/:id', function(req, res) {
     //     friends.update(req, res);
     // });
-    // app.delete('/friends/:id', function(req, res) {
-    //     friends.delete(req, res);
-    // });
+    app.delete('/cods/:id', function(req, res) {
+        cods.delete(req, res);
+    });
 }
 // 5 of the 7 RESTful routes, excludes new and edit
