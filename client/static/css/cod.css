@@ -5,6 +5,7 @@ body {
 
 .container {
     padding: 10px;
+    border-radius: 5px;
 }
 
 header h1 {
@@ -83,7 +84,9 @@ header h1 {
     color: white;
 }
 
-
+#donotfill {
+    display: none;
+}
 
 .ng-modal-overlay {
   /* A dark translucent div that covers the whole screen */

@@ -13,7 +13,7 @@
         </div>
     </div> <!-- end cods -->
     <button ng-click='toggleModal()' id="add-color-button">Add Your Color of the Day</button>
-    <modal-dialog show='modalShown' width='350px' height='500px'>
+    <modal-dialog show='modalShown' width='350px' height='520px'>
         <p>Select your color for today:</p>
         <div class="color-list">
             <div ng-repeat="row in colors">
@@ -29,7 +29,7 @@
             <input type="text" name="colorName" ng-model="newCod.colorName">
             <label for="userName">Sign your entry (if you wish):</label>
             <input type="text" name="userName" ng-model="newCod.userName">
-            <input type="text" name="donotfill" id="donotfill">
+            <input type="text" name="donotfill" id="donotfill" ng-model="newCod.donotfill">
             <input type="submit">
         </form>
     </modal-dialog>

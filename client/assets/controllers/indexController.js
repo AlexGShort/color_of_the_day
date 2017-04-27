@@ -80,10 +80,13 @@ app.controller('indexController', ['$scope','codsFactory', '$routeParams', '$loc
 
     $scope.create = function(){
         console.log("indexController create ran");
-        codsFactory.create($scope.newCod, function(){
-            $location.url('/index');
-        })
-        index();
+        console.log("$scope.newCod.donotfill:", $scope.newCod.donotfill);
+        if($scope.newCod.donotfill === undefined){
+            codsFactory.create($scope.newCod, function(){
+                $location.url('/index');
+            })
+            index();
+        }
     }
 
     $scope.delete = function(cod_id){
