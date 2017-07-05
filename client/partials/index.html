@@ -2,8 +2,9 @@
     <header>
         <h1 bg-gradient="fluff">Color of the Day!</h1>
     </header>
+    <button ng-click='toggleModal()' id="add-color-button">Add Your Color of the Day</button>
     <div class="cods">
-        <div ng-repeat="cod in cods" class="cod card" style="background-color:{{ cod.colorCode }}" ng-class="setTextColorClass(cod.colorCode)">
+        <div ng-repeat="cod in cods | orderBy : '-updatedAt'" class="cod card" style="background-color:{{ cod.colorCode }}" ng-class="setTextColorClass(cod.colorCode)">
             <div class="cod-text card-content">
                 <span class="cod-color-name card-title">{{ cod.colorName }}</span>
                 <p class="cod-name">{{ cod.userName}}</p>
@@ -12,7 +13,6 @@
             </div>
         </div>
     </div> <!-- end cods -->
-    <button ng-click='toggleModal()' id="add-color-button">Add Your Color of the Day</button>
     <modal-dialog show='modalShown' width='350px' height='520px'>
         <p>Select your color for today:</p>
         <div class="color-list">
